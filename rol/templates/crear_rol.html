@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Nuevo Rol</h1>
+  <form method="post" action="{% url 'rol:crearrol' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-success" type="submit" value="Guardar"></button>
+  </form>
+{% endblock %}

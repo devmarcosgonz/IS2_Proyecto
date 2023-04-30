@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Usuarios</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de Usuario</th>
+            <th>Usuario de Sistema</th>
+            <th>Contrasenha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nombre_usuario }}</td>
+            <td>{{ usuario.usuario_sistema }}</td>
+            <td>{{ usuario.contrasenha }}</td>
+            <td>
+                <!-- <a href="#">Detail</a> | | -->
+                <a href="{% url 'usuario:actualizarusuario' usuario.id_usuario %}" class="btn btn-secondary">Editar</a>
+                <a href="{% url 'usuario:eliminarusuario' usuario.id_usuario %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el usuario \'{{ usuario.nombre_usuario }}\'?')">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay usuarios.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    <a href="{% url 'usuario:crearusuario' %}" class="btn btn-primary">Nuevo Usuario</a>
+{% endblock %}

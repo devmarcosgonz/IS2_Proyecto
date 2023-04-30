@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Proyectos-Usuarios</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID del Proyecto</th>
+            <th>ID del Usuario</th>
+            <th>ID del Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for proyectousuario in proyectousuarios %}
+        <tr>
+            <td>{{ proyectousuario.id_proyecto_usuario }}</td>
+            <td>{{ proyectousuario.id_proyecto }}</td>
+            <td>{{ proyectousuario.id_usuario }}</td>
+            <td>{{ proyectousuario.id_rol }}</td>
+            <td>
+                <!-- <a href="#">Detail</a> | | -->
+                <a href="{% url 'proyectousuario:actualizarproyectousuario' proyectousuario.id_proyecto_usuario %}" class="btn btn-secondary">Editar</a>
+                <a href="{% url 'proyectousuario:eliminarproyectousuario' proyectousuario.id_proyecto_usuario %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar la asignación de \'{{ proyectousuario.id_usuario }}\'? del proyecto')">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay asginaciones de proyectos a usuarios.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'proyectousuario:crearproyectousuario' %}" class="btn btn-primary">Asignar Proyecto-Usuario</a>
+<div>
+    <a href="{% url 'proyecto:listaproyectos' %}" class="btn btn-info">Volver a Proyectos</a>
+</div>
+{% endblock %}

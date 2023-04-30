@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Roles</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción del Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rol in roles %}
+        <tr>
+            <td>{{ rol.id_rol }}</td>
+            <td>{{ rol.descripcion_rol }}</td>
+            <td>
+                <!-- <a href="#">Detail</a> | | -->
+                <a href="{% url 'rol:actualizarrol' rol.id_rol %}" class="btn btn-secondary">Editar</a>
+                <a href="{% url 'rol:eliminarrol' rol.id_rol %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el rol \'{{ rol.descripcion_rol }}\'?')">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay roles.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'rol:crearrol' %}" class="btn btn-primary">Nuevo Rol</a>
+<!-- Botón 'Asignar Proyectos a Usuarios', solo aparece si existen roles -->
+{% if roles %}
+<div class="float-right">
+    <a href="{% url 'proyectousuario:listaproyectousuarios' %}" class="btn btn-info float-right">Lista de Proyectos - Usuarios</a>
+</div>
+{% endif %}
+{% endblock %}

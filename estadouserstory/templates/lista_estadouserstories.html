@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Estados de un User Story</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción del Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for estadouserstory in estadouserstories %}
+        <tr>
+            <td>{{ estadouserstory.id_estado }}</td>
+            <td>{{ estadouserstory.descripcion_estado }}</td>
+            <td>
+                <!-- <a href="#">Detail</a> | | -->
+                <a href="{% url 'estadouserstory:actualizarestadouserstory' estadouserstory.id_estado %}" class="btn btn-secondary">Editar</a>
+                <a href="{% url 'estadouserstory:eliminarestadouserstory' estadouserstory.id_estado %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el estado \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay estados para un User Story.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'estadouserstory:crearestadouserstory' %}" class="btn btn-primary">Nuevo Estado para User Story</a>
+<!-- Botón 'Lista de User Stories', solo aparece si existen user stories -->
+{% if estadouserstories %}
+<div class="float-right">
+    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info float-right">Lista de User Stories</a>
+</div>
+{% endif %}
+{% endblock %}

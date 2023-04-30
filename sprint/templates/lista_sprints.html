@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Sprints</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Sprint</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Fin Prevista</th>
+            <th>Fecha de Fin</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sprint in sprints %}
+        <tr>
+            <td>{{ sprint.id_sprint }}</td>
+            <td>{{ sprint.nombre_sprint }}</td>
+            <td>{{ sprint.fecha_inicio }}</td>
+            <td>{{ sprint.fecha_fin_prev }}</td>
+            <td>{{ sprint.fecha_fin }}</td>
+            <td>
+                <!-- <a href="#">Detail</a> | | -->
+                <a href="{% url 'sprint:actualizarsprint' sprint.id_sprint %}" class="btn btn-secondary">Editar</a>
+                <a href="{% url 'sprint:eliminarsprint' sprint.id_sprint %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el sprint \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No hay sprints.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'sprint:crearsprint' %}" class="btn btn-primary">Nuevo Sprint</a>
+<!-- Botón 'Lista de Estados de User Story', solo aparece si existen sprints -->
+{% if sprints %}
+<div class="float-right">
+    <a href="{% url 'estadouserstory:listaestadouserstories' %}" class="btn btn-info float-right">Lista de Estados de User Story</a>
+</div>
+{% endif %}
+<!-- Botón 'Lista de User Stories', solo aparece si existen existen estados de user story -->
+{% if estadouserstories %}
+<div class="float-right">
+    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info float-right">Lista de User Stories</a>
+</div>
+{% endif %}
+{% endblock %}

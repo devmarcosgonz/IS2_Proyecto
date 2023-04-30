@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header>
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">¡Bienvenido!</h1>
+    <p class="fs-5 text-muted">Herramienta efectiva para el control seguro y confiable de los proyectos en los que
+      se encuentra trabajando.</p>
+  </div>
+
+</header>
+
+<body>
+  <div class="row row-cols-1 row-cols-md-3 mb-auto text-center mx-auto">
+    <div class="col mx-auto">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Instrucciones</h4>
+        </div>
+        <div class="card-body">
+          <p class="list-unstyled mt-3 mb-4">Conoce sobre la aplicación</p>
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary">
+            <a href="{% url 'main' %}">
+              Detalles
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock %}
