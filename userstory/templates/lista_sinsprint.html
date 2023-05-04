@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -41,12 +42,13 @@
         </tr>
         {% empty %}
         <tr>
-            <td colspan="4">No hay User Story sin sprint.</td>
+            <td colspan="4">No hay User Story sin Sprint.</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+<!-- <a href="{% url 'userstory:crearuserstory' %}" class="btn btn-primary">Crear User Story</a> -->
 <div>
-    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info">Volver a User Stories</a>
+    <a href="{% url 'sprint:listasprints' %}" class="btn btn-info">Volver a Sprints</a>
 </div>
 {% endblock %}
