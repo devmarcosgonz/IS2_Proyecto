@@ -46,3 +46,8 @@ def eliminar_userstory(request, pk):
     userstory.delete()
     userstories = UserStory.objects.all().order_by('id_userstory')
     return render(request, 'lista_userstories.html', {'userstories': userstories})
+
+
+def lista_sinsprint(request):
+    userstories = UserStory.objects.filter(Sprint__isnull=True).order_by('id_userstory')
+    return render(request, 'lista_sinsprint.html', {'userstories': userstories})

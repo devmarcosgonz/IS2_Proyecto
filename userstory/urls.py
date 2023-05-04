@@ -9,4 +9,5 @@ urlpatterns = [
     path('crearuserstory', views.crear_userstory, name='crearuserstory'),
     path('actualizaruserstory/<int:pk>', views.actualizar_userstory, name='actualizaruserstory'),
     path('eliminaruserstory/<int:pk>', views.eliminar_userstory, name='eliminaruserstory'),
+    path('listasinsprint', views.lista_sinsprint, name='listasinsprint'),
 ]

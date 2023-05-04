@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de User Stories</h1>
+<h1>Lista de User Stories sin Sprint</h1>
 <table>
     <thead>
         <tr>
@@ -41,14 +41,12 @@
         </tr>
         {% empty %}
         <tr>
-            <td colspan="4">No hay User Story.</td>
+            <td colspan="4">No hay User Story sin sprint.</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'userstory:crearuserstory' %}" class="btn btn-primary">Crear User Story</a>
 <div>
-    <a href="{% url 'sprint:listasprints' %}" class="btn btn-info">Volver a Sprints</a>
+    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info">Volver a User Stories</a>
 </div>
-<a href="{% url 'userstory:listasinsprint' %}" class="btn btn-primary">Lista de User Story sin Sprint</a>
 {% endblock %}
