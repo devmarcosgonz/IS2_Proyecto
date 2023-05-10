@@ -35,16 +35,10 @@
     </tbody>
 </table>
 <a href="{% url 'sprint:crearsprint' %}" class="btn btn-primary">Nuevo Sprint</a>
-<!-- Botón 'Lista de Estados de User Story', solo aparece si existen sprints -->
+<!-- Botón 'Lista de User Stories', solo aparece si existen existen sprints -->
 {% if sprints %}
 <div class="float-right">
-    <a href="{% url 'estadouserstory:listaestadouserstories' %}" class="btn btn-info float-right">Lista de Estados de User Story</a>
-</div>
-{% endif %}
-<!-- Botón 'Lista de User Stories', solo aparece si existen existen estados de user story -->
-{% if estadouserstories %}
-<div class="float-right">
-    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info float-right">Lista de User Stories</a>
+    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-secondary float-right">User Stories</a>
 </div>
 {% endif %}
 {% endblock %}

@@ -22,7 +22,8 @@
             <td>
                 <!-- <a href="#">Detail</a> | | -->
                 <a href="{% url 'usuario:actualizarusuario' usuario.id_usuario %}" class="btn btn-secondary">Editar</a>
-                <a href="{% url 'usuario:eliminarusuario' usuario.id_usuario %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el usuario \'{{ usuario.nombre_usuario }}\'?')">Eliminar</a>
+                <a href="{% url 'usuario:eliminarusuario' usuario.id_usuario %}" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de que quieres eliminar el usuario \'{{ usuario.nombre_usuario }}\'?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}
@@ -32,5 +33,5 @@
         {% endfor %}
     </tbody>
 </table>
-    <a href="{% url 'usuario:crearusuario' %}" class="btn btn-primary">Nuevo Usuario</a>
+<a href="{% url 'usuario:crearusuario' %}" class="btn btn-primary">Nuevo Usuario</a>
 {% endblock %}

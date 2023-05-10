@@ -29,10 +29,4 @@
     </tbody>
 </table>
 <a href="{% url 'estadouserstory:crearestadouserstory' %}" class="btn btn-primary">Nuevo Estado para User Story</a>
-<!-- Botón 'Lista de User Stories', solo aparece si existen user stories -->
-{% if estadouserstories %}
-<div class="float-right">
-    <a href="{% url 'userstory:listauserstories' %}" class="btn btn-info float-right">Lista de User Stories</a>
-</div>
-{% endif %}
 {% endblock %}

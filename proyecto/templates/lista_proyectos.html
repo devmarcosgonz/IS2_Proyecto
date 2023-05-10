@@ -29,16 +29,10 @@
     </tbody>
 </table>
 <a href="{% url 'proyecto:crearproyecto' %}" class="btn btn-primary">Nuevo Proyecto</a>
-<!-- Botón 'Lista de Roles', solo aparece si existen proyectos -->
+<!-- Botón 'Lista de Proyectos - Usuarios', solo aparece si existen proyectos -->
 {% if proyectos %}
 <div class="float-right">
-    <a href="{% url 'rol:listaroles' %}" class="btn btn-info float-right">Lista de Roles</a>
-</div>
-{% endif %}
-<!-- Botón 'ista de Proyectos - Usuarios', solo aparece si existen roles -->
-{% if roles %}
-<div class="float-right">
-    <a href="{% url 'proyectousuario:listaproyectousuarios' %}" class="btn btn-info float-right">Lista de Proyectos - Usuarios</a>
+    <a href="{% url 'proyectousuario:listaproyectousuarios' %}" class="btn btn-secondary float-right">Proyectos - Usuarios</a>
 </div>
 {% endif %}
 {% endblock %}
