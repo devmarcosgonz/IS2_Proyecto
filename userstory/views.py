@@ -51,3 +51,12 @@ def eliminar_userstory(request, pk):
 def lista_sinsprint(request):
     userstories = UserStory.objects.filter(id_sprint__isnull=True)
     return render(request, 'lista_sinsprint.html', {'userstories': userstories})
+
+
+#Tablero Kanban
+
+def kanban_board(request):
+    to_do = UserStory.objects.filter(id_estado=1)
+    doing = UserStory.objects.filter(id_estado=2)
+    done = UserStory.objects.filter(id_estado=3)
+    return render(request, 'tablero_kanban.html', {'to_do': to_do, 'doing': doing, 'done': done})

@@ -22,9 +22,8 @@
                         <a class="nav-link" href="{% url 'usuario:listausuarios' %}">Usuarios</a>
                         <a class="nav-link" href="{% url 'proyecto:listaproyectos' %}">Proyectos</a>
                         <a class="nav-link" href="{% url 'sprint:listasprints' %}">Sprint</a>
-                        <!-- <a class="nav-link" href="#">Backlog</a>
-                        <a class="nav-link" href="#">Tablero Kanban</a>
-                        <a class="nav-link" href="#">Burndown Chart</a> -->
+                        <a class="nav-link" href="{% url 'userstory:kanbanboard' %}">Tablero Kanban</a>
+                        <!-- <a class="nav-link" href="#">Burndown Chart</a> -->
                         <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
                     </div>
                 </div>

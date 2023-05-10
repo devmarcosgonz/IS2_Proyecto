@@ -8,7 +8,7 @@ class Sprints(models.Model):
     nombre_sprint = models.CharField(max_length=10)
     fecha_inicio = models.DateField(default = date.today)
     fecha_fin_prev = models.DateField()
-    fecha_fin = models.DateField()
+    fecha_fin = models.DateField(null=True)
 
     class Meta:
         db_table = 'sprints'

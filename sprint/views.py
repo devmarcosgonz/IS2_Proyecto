@@ -27,7 +27,7 @@ def crear_sprint(request):
 
 
 def actualizar_sprint(request, pk):
-    proyecto = get_object_or_404(Sprints, pk=pk)
+    sprint = get_object_or_404(Sprints, pk=pk)
     if request.method == "POST":
         form = SprintForm(request.POST, instance=sprint)
         if form.is_valid():

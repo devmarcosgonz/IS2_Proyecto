@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <h2>To Do</h2>
+        {% for user_story in to_do %}
+        <div>{{ user_story.id_userstory }} - {{ user_story.nombre }}</div>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <h2>Doing</h2>
+        {% for user_story in doing %}
+        <div>{{ user_story.id_userstory }} - {{ user_story.nombre }}</div>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <h2>Done</h2>
+        {% for user_story in done %}
+        <div>{{ user_story.id_userstory }} - {{ user_story.nombre }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
