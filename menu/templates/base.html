@@ -20,7 +20,7 @@
     <!-- Para el tablero kanban -->
     <link rel="stylesheet" href="{% static 'css/kanban.css' %}">
 
-    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom" style="background: white;">
         <span class="fs-4 mx-auto padding-auto">PMO Gestión de Proyectos</span>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -57,12 +57,10 @@
         </nav>
     </div>
 </head>
-
 <body>
     <main>
         {% block content %}
         {% endblock %}
     </main>
 </body>
-
 </html>
