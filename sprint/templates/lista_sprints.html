@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de Sprints</h1>
-<table>
-    <thead>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista de Sprints</h1>
+    <div>
+        <a href="{% url 'sprint:crearsprint' %}" class="btn btn-primary">Nuevo Sprint</a>
+        <!-- Botón 'Lista de User Stories', solo aparece si existen existen sprints -->
+        {% if sprints %}
+        <a href="{% url 'userstory:listauserstories' %}" class="btn btn-secondary float-right">User Stories</a>
+    </div>
+</div>
+{% endif %}
+<table class="table">
+    <thead class="table-light">
         <tr>
             <th>ID</th>
             <th>Nombre del Sprint</th>
@@ -13,7 +22,7 @@
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-light">
         {% for sprint in sprints %}
         <tr>
             <td>{{ sprint.id_sprint }}</td>
@@ -24,7 +33,8 @@
             <td>
                 <!-- <a href="#">Detail</a> | | -->
                 <a href="{% url 'sprint:actualizarsprint' sprint.id_sprint %}" class="btn btn-secondary">Editar</a>
-                <a href="{% url 'sprint:eliminarsprint' sprint.id_sprint %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el sprint \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
+                <a href="{% url 'sprint:eliminarsprint' sprint.id_sprint %}" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de que quieres eliminar el sprint \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}
@@ -34,11 +44,11 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'sprint:crearsprint' %}" class="btn btn-primary">Nuevo Sprint</a>
-<!-- Botón 'Lista de User Stories', solo aparece si existen existen sprints -->
+<!-- <a href="{% url 'sprint:crearsprint' %}" class="btn btn-primary">Nuevo Sprint</a>
+Botón 'Lista de User Stories', solo aparece si existen existen sprints
 {% if sprints %}
 <div class="float-right">
     <a href="{% url 'userstory:listauserstories' %}" class="btn btn-secondary float-right">User Stories</a>
 </div>
-{% endif %}
+{% endif %} -->
 {% endblock %}

@@ -1,24 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de Proyectos</h1>
-<table>
-    <thead>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista de Proyectos</h1>
+    <div>
+        <a href="{% url 'proyecto:crearproyecto' %}" class="btn btn-primary">Nuevo Proyecto</a>
+        <!-- Botón 'Lista de Proyectos - Usuarios', solo aparece si existen proyectos -->
+        {% if proyectos %}
+            <a href="{% url 'proyectousuario:listaproyectousuarios' %}" class="btn btn-secondary float-right">Proyectos-Usuarios</a>
+        {% endif %}
+    </div>
+</div>
+<table class="table">
+    <thead class="table-light">
         <tr>
             <th>ID</th>
             <th>Nombre del Proyecto</th>
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-light">
         {% for proyecto in proyectos %}
         <tr>
             <td>{{ proyecto.id_proyecto }}</td>
             <td>{{ proyecto.nombre_proyecto }}</td>
             <td>
                 <!-- <a href="#">Detail</a> | | -->
-                <a href="{% url 'proyecto:actualizarproyecto' proyecto.id_proyecto %}" class="btn btn-secondary">Editar</a>
-                <a href="{% url 'proyecto:eliminarproyecto' proyecto.id_proyecto %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el proyecto \'{{ proyecto.nombre_proyecto }}\'?')">Eliminar</a>
+                <a href="{% url 'proyecto:actualizarproyecto' proyecto.id_proyecto %}"
+                    class="btn btn-secondary">Editar</a>
+                <a href="{% url 'proyecto:eliminarproyecto' proyecto.id_proyecto %}" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de que quieres eliminar el proyecto \'{{ proyecto.nombre_proyecto }}\'?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}
@@ -28,11 +39,11 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'proyecto:crearproyecto' %}" class="btn btn-primary">Nuevo Proyecto</a>
-<!-- Botón 'Lista de Proyectos - Usuarios', solo aparece si existen proyectos -->
+<!--<a href="{% url 'proyecto:crearproyecto' %}" class="btn btn-primary">Nuevo Proyecto</a>
+Botón 'Lista de Proyectos - Usuarios', solo aparece si existen proyectos
 {% if proyectos %}
 <div class="float-right">
     <a href="{% url 'proyectousuario:listaproyectousuarios' %}" class="btn btn-secondary float-right">Proyectos - Usuarios</a>
 </div>
-{% endif %}
+{% endif %}-->
 {% endblock %}

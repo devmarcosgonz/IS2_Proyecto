@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de User Stories</h1>
-<table>
-    <thead>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista de User Stories</h1>
+
+    <div>
+        <a href="{% url 'userstory:crearuserstory' %}" class="btn btn-primary">Crear User Story</a>
+        <a href="{% url 'userstory:listasinsprint' %}" class="btn btn-warning">User Stories sin Sprint</a>
+        <a href="{% url 'sprint:listasprints' %}" class="btn btn-info"><i class="fa fa-arrow-left"></i> Atrás</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead class="table-light">
         <tr>
             <th>ID</th>
             <th>Nombre del User Story</th>
@@ -19,7 +28,7 @@
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-light">
         {% for userstory in userstories %}
         <tr>
             <td>{{ userstory.id_userstory }}</td>
@@ -35,8 +44,10 @@
             <td>{{ userstory.id_proyectousuario }}</td>
             <td>
                 <!-- <a href="#">Detail</a> | | -->
-                <a href="{% url 'userstory:actualizaruserstory' userstory.id_userstory %}" class="btn btn-secondary">Editar</a>
-                <a href="{% url 'userstory:eliminaruserstory' userstory.id_userstory %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el User Story de \'{{ userstory.id_userstory }}\'?')">Eliminar</a>
+                <a href="{% url 'userstory:actualizaruserstory' userstory.id_userstory %}"
+                    class="btn btn-secondary">Editar</a>
+                <a href="{% url 'userstory:eliminaruserstory' userstory.id_userstory %}" class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de que quieres eliminar el User Story de \'{{ userstory.id_userstory }}\'?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}
@@ -46,9 +57,9 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'userstory:crearuserstory' %}" class="btn btn-primary">Crear User Story</a>
+<!-- <a href="{% url 'userstory:crearuserstory' %}" class="btn btn-primary">Crear User Story</a>
 <div>
     <a href="{% url 'sprint:listasprints' %}" class="btn btn-info"><i class="fa fa-arrow-left"></i> Atrás</a>
 </div>
-<a href="{% url 'userstory:listasinsprint' %}" class="btn btn-warning">User Stories sin Sprint</a>
+<a href="{% url 'userstory:listasinsprint' %}" class="btn btn-warning">User Stories sin Sprint</a> -->
 {% endblock %}

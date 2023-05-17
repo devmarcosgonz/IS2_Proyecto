@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Lista de Estados de un User Story</h1>
-<table>
-    <thead>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista de Estados de un User Story</h1>
+    <a href="{% url 'estadouserstory:crearestadouserstory' %}" class="btn btn-primary">Nuevo Estado para User Story</a>
+</div>
+<table class="table">
+    <thead class="table-light">
         <tr>
             <th>ID</th>
             <th>Descripción del Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-light">
         {% for estadouserstory in estadouserstories %}
         <tr>
             <td>{{ estadouserstory.id_estado }}</td>
             <td>{{ estadouserstory.descripcion_estado }}</td>
             <td>
                 <!-- <a href="#">Detail</a> | | -->
-                <a href="{% url 'estadouserstory:actualizarestadouserstory' estadouserstory.id_estado %}" class="btn btn-secondary">Editar</a>
-                <a href="{% url 'estadouserstory:eliminarestadouserstory' estadouserstory.id_estado %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar el estado \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
+                <a href="{% url 'estadouserstory:actualizarestadouserstory' estadouserstory.id_estado %}"
+                    class="btn btn-secondary">Editar</a>
+                <a href="{% url 'estadouserstory:eliminarestadouserstory' estadouserstory.id_estado %}"
+                    class="btn btn-danger"
+                    onclick="return confirm('¿Estás seguro de que quieres eliminar el estado \'{{ sprint.nombre_sprint }}\'?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}
@@ -28,5 +34,5 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{% url 'estadouserstory:crearestadouserstory' %}" class="btn btn-primary">Nuevo Estado para User Story</a>
+<!-- <a href="{% url 'estadouserstory:crearestadouserstory' %}" class="btn btn-primary">Nuevo Estado para User Story</a> -->
 {% endblock %}
