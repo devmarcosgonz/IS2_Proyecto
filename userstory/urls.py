@@ -11,4 +11,6 @@ urlpatterns = [
     path('eliminaruserstory/<int:pk>', views.eliminar_userstory, name='eliminaruserstory'),
     path('listasinsprint', views.lista_sinsprint, name='listasinsprint'),
     path('kanbanboard', views.kanban_board, name='kanbanboard'),
+    path('burndown/list', views.burndown_list, name='burndownlist'),
+    path('burndown/chart/<int:pk>', views.burndown_chart, name='burndownchart'),
 ]
