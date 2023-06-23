@@ -26,7 +26,7 @@ def crear_rol(request):
 
 
 def actualizar_rol(request, pk):
-    rol = get_object_or_404(Proyectos, pk=pk)
+    rol = get_object_or_404(Roles, pk=pk)
     if request.method == "POST":
         form = RolesForm(request.POST, instance=rol)
         if form.is_valid():
