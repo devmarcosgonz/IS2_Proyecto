@@ -7,7 +7,7 @@
     <form method="post" action="{% url 'proyecto:crearproyecto' %}">
       {% csrf_token %}
       {{ form.as_p }}
-      <input class="btn btn-success" type="submit" value="Guardar"></button>
+      <input class="btn btn-success" type="submit" value="Guardar" onclick="alert('Se ha generado automáticamente un Backlog ID para este proyecto')"></button>
     </form>
   </div>
 </div>
