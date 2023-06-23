@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Sprints
 from .forms import SprintForm
 
@@ -7,6 +7,7 @@ from .forms import SprintForm
 def lista_sprints(request):
     sprints = Sprints.objects.all().order_by('id_sprint')
     return render(request, 'lista_sprints.html', {'sprints': sprints})
+
 
 # def usuarios_detail(request, pk):
 #     usuario = get_object_or_404(Usuarios, pk=pk)
@@ -19,8 +20,7 @@ def crear_sprint(request):
         if form.is_valid():
             sprint = form.save(commit=False)
             sprint.save()
-            sprints = Sprints.objects.all().order_by('id_sprint')
-            return render(request, 'lista_sprints.html', {'sprints': sprints})
+            return redirect('sprint:listasprints')
     else:
         form = SprintForm()
     return render(request, 'crear_sprint.html', {'form': form})
@@ -33,8 +33,7 @@ def actualizar_sprint(request, pk):
         if form.is_valid():
             sprint = form.save(commit=False)
             sprint.save()
-            sprints = Sprints.objects.all().order_by('id_sprint')
-            return render(request, 'lista_sprints.html', {'sprints': sprints})
+            return redirect('sprint:listasprints')
     else:
         form = SprintForm(instance=sprint)
     return render(request, 'actualizar_sprint.html', {'form': form})
@@ -44,5 +43,4 @@ def eliminar_sprint(request, pk):
     print(request, pk)
     sprint = get_object_or_404(Sprints, pk=pk)
     sprint.delete()
-    sprints = Sprints.objects.all().order_by('id_sprint')
-    return render(request, 'lista_sprints.html', {'sprints': sprints})
+    return redirect('sprint:listasprints')
