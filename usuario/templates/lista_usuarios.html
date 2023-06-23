@@ -14,6 +14,7 @@
             <th>Nombre de Usuario</th>
             <th>Usuario de Sistema</th>
             <th>Contrasenha</th>
+            <th>Estado</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -24,6 +25,13 @@
             <td>{{ usuario.nombre_usuario }}</td>
             <td>{{ usuario.usuario_sistema }}</td>
             <td>{{ usuario.contrasenha }}</td>
+            <td>
+                {% if usuario.is_active %}
+                    Activo
+                {% else %}
+                    Inactivo
+                {% endif %}
+            </td>
             <td>
                 <!-- <a href="#">Detail</a> | | -->
                 <a href="{% url 'usuario:actualizarusuario' usuario.id_usuario %}" class="btn btn-secondary">Editar</a>
@@ -38,7 +46,4 @@
         {% endfor %}
     </tbody>
 </table>
-<!-- <div class="d-flex justify-content-center">
-    <a href="{% url 'usuario:crearusuario' %}" class="btn btn-primary">Nuevo Usuario</a>
-</div> -->
 {% endblock %}

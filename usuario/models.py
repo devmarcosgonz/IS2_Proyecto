@@ -6,6 +6,7 @@ class Usuarios(models.Model):
     nombre_usuario = models.CharField(max_length=50)
     usuario_sistema = models.CharField(max_length=50)
     contrasenha = models.CharField(max_length=20)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'usuarios'
