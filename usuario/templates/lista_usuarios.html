@@ -36,7 +36,7 @@
                 <!-- <a href="#">Detail</a> | | -->
                 <a href="{% url 'usuario:actualizarusuario' usuario.id_usuario %}" class="btn btn-secondary">Editar</a>
                 <a href="{% url 'usuario:eliminarusuario' usuario.id_usuario %}" class="btn btn-danger"
-                    onclick="return confirm('¿Estás seguro de que quieres eliminar el usuario \'{{ usuario.nombre_usuario }}\'?')">Eliminar</a>
+                    onclick="return confirm('¿Estás seguro de que quieres cambiar el estado del usuario \'{{ usuario.nombre_usuario }}\' a inactivo?')">Eliminar</a>
             </td>
         </tr>
         {% empty %}

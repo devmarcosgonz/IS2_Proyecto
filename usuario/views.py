@@ -42,5 +42,6 @@ def actualizar_usuario(request, pk):
 def eliminar_usuario(request, pk):
     print(request, pk)
     usuario = get_object_or_404(Usuarios, pk=pk)
-    usuario.delete()
+    usuario.is_active = False  # Cambiar el estado a Inactivo
+    usuario.save()
     return redirect('usuario:listausuarios')
