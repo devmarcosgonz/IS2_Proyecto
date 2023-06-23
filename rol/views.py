@@ -8,7 +8,6 @@ def lista_roles(request):
     roles = Roles.objects.all().order_by('id_rol')
     return render(request, 'lista_roles.html', {'roles': roles})
 
-
 # def usuarios_detail(request, pk):
 #     usuario = get_object_or_404(Usuarios, pk=pk)
 #     return render(request, 'usuarios/usuarios_detail.html', {'usuario': usuario})
