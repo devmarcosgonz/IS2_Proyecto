@@ -64,31 +64,31 @@ Developing
 
 ## App Features and Demo
 
-- **Sprint and Backlog Management**:
+# Sprint and Backlog Management:
  - Creation and management of sprints with start and end dates.
  - Product backlog management with task prioritization.
 
-- **Interactive Kanban Board**:
+# Interactive Kanban Board:
  - Visualization and organization of tasks on a Kanban board.
 
-- **Data Visualization with Plotly**:
+# Data Visualization with Plotly:
  - Interactive graphs to visualize the progress of the project.
  - Burndown graphs to track sprint progress.
  - Equipment performance analysis using speed graphs and other metrics.
 
-- **Integration with PostgreSQL**:
+# Integration with PostgreSQL:
  - Robust and secure storage of project data using PostgreSQL.
  - Efficient and secure queries to recover and manage project data.
 
-- **User Interface with Bootstrap**:
+# User Interface with Bootstrap:
  - Stylized input forms and modals for creating and editing tasks and sprints.
 
 <!--
-- **Notifications and Reminders**:
+# Notifications and Reminders:
  - Notification system to alert team members about important changes and upcoming events.
  - Automatic reminders for upcoming tasks and events.
 
-- **User Authentication and Authorization**:
+# User Authentication and Authorization:
  - User registration and authentication.
  - Role and permission management for different team members (e.g. Product Owner, Scrum Master, Developer).
 -->
@@ -100,11 +100,7 @@ This project is a project management tool using the SCRUM methodology, featuring
 
 ### Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 
-+ [autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8) 
-+ [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
-+ [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) 
-+ [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) 
+[VSCode](https://code.visualstudio.com/) + [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) + [autopep8](https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8) + [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) + [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) + [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) 
 
 ### Customize configuration
 
@@ -151,10 +147,10 @@ python manage.py runserver
 
 ## Technologies
 Django + Python\
+autopep8 + pycodestyle\
 PostgreSQL + psycopg2\
 Plotly\
-Bootstrap\
-autopep8 + autopep8
+Bootstrap
 
 ## Contributors
 Marcos González - Development\
