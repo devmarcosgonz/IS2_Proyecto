@@ -15,24 +15,24 @@
 # IS2_Proyecto
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <img src="./assets/images/readme/1_inicio_de_sesion.jpg" width="45%" />
-    <img src="./assets/images/readme/2_inicio.jpg" width="45%" />
-    <img src="./assets/images/readme/3_1_usuarios.jpg" width="45%" />
-    <img src="./assets/images/readme/3_2_nuevo_usuario.jpg" width="45%" />
-    <img src="./assets/images/readme/4_1_1_proyectos.jpg" width="45%" />
-    <img src="./assets/images/readme/4_1_2_nuevo_proyecto.jpg" width="45%" />
-    <img src="./assets/images/readme/4_2_1_proyectos_usuarios.jpg" width="45%" />
-    <img src="./assets/images/readme/4_2_2_nuevo_proyecto_usuario.jpg" width="45%" />
-    <img src="./assets/images/readme/5_1_sprint.jpg" width="45%" />
-    <img src="./assets/images/readme/5_2_nuevo_sprint.jpg" width="45%" />
-    <img src="./assets/images/readme/6_1_user_stories.jpg" width="45%" />
-    <img src="./assets/images/readme/6_2_nuevo_user_story.jpg" width="45%" />
-    <img src="./assets/images/readme/6_3_use_story_sin_sprint.jpg" width="45%" />
-    <img src="./assets/images/readme/7_1_tablero_kanban.jpg" width="45%" />
-    <img src="./assets/images/readme/8_1_burndown_chart.jpg" width="45%" />
-    <img src="./assets/images/readme/8_2_burndown_chart_graphic.jpg" width="45%" />
-    <img src="./assets/images/readme/9_1_configuracion_roles_de_usuarios.jpg" width="45%" />
-    <img src="./assets/images/readme/9_2_configuracion_estados_de_un_user_story.jpg" width="45%" />
+    <img src="./assets/images/readme/1_inicio_de_sesion.webp" width="45%" />
+    <img src="./assets/images/readme/2_inicio.webp" width="45%" />
+    <img src="./assets/images/readme/3_1_usuarios.webp" width="45%" />
+    <img src="./assets/images/readme/3_2_nuevo_usuario.webp" width="45%" />
+    <img src="./assets/images/readme/4_1_1_proyectos.webp" width="45%" />
+    <img src="./assets/images/readme/4_1_2_nuevo_proyecto.webp" width="45%" />
+    <img src="./assets/images/readme/4_2_1_proyectos_usuarios.webp" width="45%" />
+    <img src="./assets/images/readme/4_2_2_nuevo_proyecto_usuario.webp" width="45%" />
+    <img src="./assets/images/readme/5_1_sprint.webp" width="45%" />
+    <img src="./assets/images/readme/5_2_nuevo_sprint.webp" width="45%" />
+    <img src="./assets/images/readme/6_1_user_stories.webp" width="45%" />
+    <img src="./assets/images/readme/6_2_nuevo_user_story.webp" width="45%" />
+    <img src="./assets/images/readme/6_3_use_story_sin_sprint.webp" width="45%" />
+    <img src="./assets/images/readme/7_1_tablero_kanban.webp" width="45%" />
+    <img src="./assets/images/readme/8_1_burndown_chart.webp" width="45%" />
+    <img src="./assets/images/readme/8_2_burndown_chart_graphic.webp" width="45%" />
+    <img src="./assets/images/readme/9_1_configuracion_roles_de_usuarios.webp" width="45%" />
+    <img src="./assets/images/readme/9_2_configuracion_estados_de_un_user_story.webp" width="45%" />
     <!-- Añadir más imágenes según sea necesario -->
 </div>
 
